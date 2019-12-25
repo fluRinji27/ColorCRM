@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+$_SESSION['ord_name'] = $_POST['ord_name'];
+$_SESSION['org_name'] = $_POST['ord_name'];
+$_SESSION['ord_date'] = $_POST['ord_date'];
+?>
 <html>
 <html lang="ru">
 <head>
@@ -15,11 +19,13 @@ echo $priceForWorks['prepar_painting']; ?>
 <h1>Добавить печь +</h1>
 <form id="test" method="POST">
     <label for="ord_name">Наименование</label>
-    <input type="text" name="ord_name">
+    <input id="ord_name" type="text" name="ord_name" value="<?php if ($_SESSION['ord_name'] !== '') {
+        echo $_SESSION['ord_name'];
+    }; ?>">
     <label for="org_name">Организация</label>
-    <input type="text" name="org_name">
+    <input id="org_name" type="text" name="org_name" value="<?php echo $_SESSION['org_name'] ?>">
     <label for="ord_date">Дата</label>
-    <input type="date" name="ord_date">
+    <input id="ord_date" type="date" name="ord_date" value="<?php //echo date("d-m-Y")  ?>">
     <label for="prod_color">Цвет</label>
     <input type="text" name="prod_color">
     <label for="diff_work_id">Сложность работ</label>
@@ -167,7 +173,7 @@ echo $priceForWorks['prepar_painting']; ?>
            } ?>">
     <input id="end_price" type="hidden" name="end_price" value="">
     <div class="formButtons">
-        <button type="reset" name="orderReset">Очистить</button>
+        <button name="orderReset" onclick="resetForm()">Очистить</button>
         <button type="submit" name="order">Добавить</button>
     </div>
 
@@ -175,5 +181,6 @@ echo $priceForWorks['prepar_painting']; ?>
 
 
 <script src="../../script/calculate.js"></script>
+<script src="../../script/resetForm.js"></script>
 </body>
 </html>

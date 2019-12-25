@@ -12,6 +12,11 @@
     <?php foreach ($orderList as $order):?>
     <div class="order">
         <div class="orderHeader">
+            <h2><?php echo $order['ord_name'] ?></h2>
+            <h2><?php echo $order['org_name'] ?></h2>
+            <h2><?php echo $order['ord_date'] ?></h2>
+        </div>
+        <div class="orderMain">
 
         </div>
     </div>

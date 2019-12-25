@@ -177,7 +177,7 @@ class Order
         $result->bindParam(':paint_one_prod', $options['paint_one_prod'], PDO::PARAM_STR);
         $result->bindParam(':add_services_id', $jsonCode, PDO::PARAM_STR);
         $result->bindParam(':prod_count', $options['prod_count'], PDO::PARAM_STR);
-        $result->bindParam(':end_price', $options['end_price'], PDO::PARAM_STR);
+        $result->bindParam(':end_price', $options['end_price'], PDO::PARAM_INT);
 
 
         if (!$result) {

@@ -3,11 +3,9 @@ let diametor = document.getElementById('diametor');
 let length = document.getElementById('length');
 let perimetr = document.getElementById('S');
 let form = document.getElementById('test');
-// let rad = document.getElementsByName('figure_type_id');
 let diff;
 let S;
 let diff_level = document.getElementById('diff');
-// let powder_dens = document.getElementById('powder_dens');
 let powder_cons = document.getElementById('powder_cons');
 let diff_100;
 let diff_70;
@@ -16,6 +14,8 @@ let end_price = document.getElementById('end_price');
 let polimerization_one_prod;
 let furnauce_degazation;
 let one_furnauce_degazation;
+
+
 let labelDiametor = document.querySelector('.diametor');
 let prod_width = document.querySelector('.prod_width');
 let count_value = document.getElementById('count_value');
@@ -24,13 +24,11 @@ let count_value = document.getElementById('count_value');
 let prepar_painting = document.getElementById('prepar_painting');
 let paint_prod = document.getElementById('paint_prod');
 let in_out_prod = document.getElementById('in_out_prod');
-// let pac_prod = document.getElementById('pac_prod');
 let rail_count = document.getElementById('rail_count');
 let min_work_price = document.getElementById('min_work_price');
 let max_pod = document.getElementById('max_pod');
 let energy_need = document.getElementById('energy_need');
 let time_furnauce_work = document.getElementById('time_furnauce_work');
-// let count_prod_in_one_rail = document.getElementById('count_prod_in_one_rail');
 let cost_for_15_metr_pack = document.getElementById('cost_for_15_metr_pack');
 
 //первый слой
@@ -38,12 +36,10 @@ let eoruLayer1 = document.getElementById('eoruLayer1');
 let euroCourslayer1 = document.getElementById('euroCourslayer1');
 let layer1Price = document.getElementById('layer1Price');
 
-
 //второй слой
 let eoruLayer2 = document.getElementById('eoruLayer2');
 let euroCourslayer2 = document.getElementById('euroCoursLayer2');
 let layer2Price = document.getElementById('layer2Price');
-
 
 //третий слой
 let eoruLayer3 = document.getElementById('eoruLayer3');
@@ -182,7 +178,7 @@ function calcPriceForWork() {
     console.log(one_furnauce_degazation);
 }
 
-form.addEventListener("onclick", function calcEndPrice() {
+form.addEventListener("keyup", function calcEndPrice() {
     calcPriceForWork();
     let price_for_one_layer_pant_for_layer1;
     let end_price_for_one_layer_pant_for_layer1;
