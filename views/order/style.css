@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center !important;
+}
+
+form {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid black;*/
+}
+input{
+    border: 1px solid black;
+    text-align: center;
+}
+
+label{
+    text-align: center;
+}
+
+.infoProd{
+    display: flex;
+    flex-direction: column;
+}
+.services input{
+    margin: 0 auto;
+}
+
+.services h2{
+    text-align: center;
+}
+.figureType{
+    display: flex;
+    flex-direction: column;
+}

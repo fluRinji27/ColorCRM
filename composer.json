@@ -1,0 +1,14 @@
+{
+    "name": "vendor/composer",
+    "description": "practicTest",
+    "type": "project",
+    "authors": [
+        {
+            "name": "fluRinji",
+            "email": "libertisiti9123@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.10"
+    }
+}
