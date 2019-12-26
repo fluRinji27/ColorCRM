@@ -84,6 +84,7 @@ class OrderController
     public function actionShowOrderCatalog()
     {
         $orderList = Order::getOrderlist();
+        $orderProdList = Order::getOrderContent();
         require_once(ROOT . '/views/orderCatalog/index.php');
         return true;
     }

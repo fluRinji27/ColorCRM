@@ -1,6 +1,6 @@
 <?php session_start();
 $_SESSION['ord_name'] = $_POST['ord_name'];
-$_SESSION['org_name'] = $_POST['ord_name'];
+$_SESSION['org_name'] = $_POST['org_name'];
 $_SESSION['ord_date'] = $_POST['ord_date'];
 ?>
 <html>
@@ -16,12 +16,13 @@ $_SESSION['ord_date'] = $_POST['ord_date'];
 <body>
 <?
 echo $priceForWorks['prepar_painting']; ?>
+<a href="/">Список заказов</a>
 <h1>Добавить печь +</h1>
 <form id="test" method="POST">
     <label for="ord_name">Наименование</label>
-    <input id="ord_name" type="text" name="ord_name" value="<?php if ($_SESSION['ord_name'] !== '') {
-        echo $_SESSION['ord_name'];
-    }; ?>">
+    <input id="ord_name" type="text" name="ord_name" value="<?php
+    echo $_SESSION['ord_name'];
+    ?>">
     <label for="org_name">Организация</label>
     <input id="org_name" type="text" name="org_name" value="<?php echo $_SESSION['org_name'] ?>">
     <label for="ord_date">Дата</label>

@@ -196,7 +196,7 @@ class Order
 
         $db = Db::getConnection();
 
-        $sql = 'SELECT DISTINCT * FROM orderss';
+        $sql = 'SELECT  * FROM orderss ';
 
         $result = $db->query($sql);
         $search = array('"', '[', ']');
@@ -205,7 +205,7 @@ class Order
         if ($result) {
             $i = 0;
             while ($row = $result->fetch()) {
-                $orderList[$i]['id'] = $row['id'];
+
                 $orderList[$i]['ord_name'] = $row['ord_name'];
                 $orderList[$i]['ord_date'] = $row['ord_date'];
                 $orderList[$i]['org_name'] = $row['org_name'];
@@ -220,7 +220,6 @@ class Order
                 $orderList[$i]['prod_count'] = $row['prod_count'];
                 $orderList[$i]['end_price'] = $row['end_price'];
                 $orderList[$i]['add_services_id'] = str_replace($search, ' ', $row['add_services_id']);
-
                 $i++;
             }
         }
@@ -229,5 +228,33 @@ class Order
         return $orderList;
     }
 
+    public static function getOrderContent()
+    {
+        $db = Db::getConnection();
 
+        $sql = 'SELECT * FROM orderss';
+
+        $result = $db->query($sql);
+        $search = array('"', '[', ']');
+        $orderProdList = array();
+
+        if ($result) {
+            $i = 0;
+            while ($row = $result->fetch()) {
+                $orderProdList[$i]['prod_name'] = $row['prod_name'];
+                $orderProdList[$i]['prod_color'] = $row['prod_color'];
+                $orderProdList[$i]['prod_length'] = $row['prod_length'];
+                $orderProdList[$i]['prod_width'] = $row['prod_width'];
+                $orderProdList[$i]['prod_diametor'] = $row['prod_diametor'];
+                $orderProdList[$i]['prod_space'] = $row['prod_space'];
+                $orderProdList[$i]['figure_type_id'] = $row['figure_type_id'];
+                $orderProdList[$i]['paint_one_prod'] = $row['paint_one_prod'];
+                $orderProdList[$i]['prod_count'] = $row['prod_count'];
+                $orderProdList[$i]['end_price'] = $row['end_price'];
+                $orderProdList[$i]['add_services_id'] = str_replace($search, ' ', $row['add_services_id']);
+                $i++;
+            }
+        }
+        return $orderProdList;
+    }
 }
