@@ -9,18 +9,33 @@
 </head>
 <body>
 <div class="wrapper">
-    <?php foreach ($orderList as $order):?>
-    <div class="order">
-        <div class="orderHeader">
-            <h2><?php echo $order['ord_name'] ?></h2>
-            <h2><?php echo $order['org_name'] ?></h2>
-            <h2><?php echo $order['ord_date'] ?></h2>
-        </div>
-        <div class="orderMain">
+    <?php foreach ($orderList as $order): ?>
+        <div class="order">
+            <div class="orderHeader">
+                <h2>Номер заказа: <?php echo $order['ord_name'] ?></h2>
+                <h2>Организация: <?php echo $order['org_name'] ?></h2>
+                <h2>Дата: <?php echo $order['ord_date'] ?></h2>
+            </div>
+            <div class="orderMain">
+                <p>Наименование продукта: <span><?php echo $order['prod_name'] ?></span></p>
+                <p>Цвет: <span><?php echo $order['prod_color'] ?></span></p>
+                <p>Тип фигуры: <span><?php if ($order['figure_type_id'] == 1) {
+                            echo 'Пластина';;
+                        } elseif ($order['figure_type_id'] == 2) {
+                            echo 'Цилиндр';
+                        } ?></span></p>
+                <p>Длинна: <span><?php echo $order['prod_length'] ?>м</span></p>
+                <p><?php if (!$order['prod_width'] == 0) {
+                        echo 'Ширина: <span>' . $order['prod_width'] . 'м</span>';
+                    } elseif (!$order['prod_diametor'] == 0) {
+                        echo 'Диаметор: <span>' . $order['prod_diametor'] . 'м</span>';
+                    } ?></p>
 
+                <p>Дополнительные услуги: <?php echo $order['add_services_id'] ?></p>
+
+            </div>
         </div>
-    </div>
-    <?php endforeach;?>
+    <?php endforeach; ?>
 </div>
 
 </body>
